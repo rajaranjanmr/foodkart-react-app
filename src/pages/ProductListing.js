@@ -69,7 +69,7 @@ function ProductListing(){
         <div className="cards-section">
                     <div className="card-sub-section">
                         <div className="card">
-                    <img src={imagebiryani} alt="biryani" style={{width:"100%"}} />
+                    <img src={imagebiryani} className ="home-image-card" alt="delicious biryani" style={{width:"100%"}} />
                     <h1>Biryanis</h1>
                     <p clclassNameass="price">₹100* Onwards</p>
                     <p>Order from best resturants</p>
@@ -80,7 +80,7 @@ function ProductListing(){
                   </div>
                   
                   <div className="card">
-                    <img src={imagethali} alt="biryani" style={{width:"100%"}} />
+                    <img src={imagethali} className ="home-image-card" alt="delicious thali" style={{width:"100%"}} />
                     <h1>Thalis</h1>
                     <p className="price">₹100* Ownwards</p>
                     <p>Order from best resturants</p>
@@ -91,7 +91,7 @@ function ProductListing(){
                   </div>
 
                   <div className="card">
-                    <img src={imagecake} alt="biryani" style={{width:"100%"}} />
+                    <img src={imagecake} className ="home-image-card" alt="delicious cake" style={{width:"100%"}} />
                     <h1>Cakes and Pastries</h1>
                     <p className="price">₹100* Onwards</p>
                     <p>Order from best resturants</p>
@@ -104,7 +104,7 @@ function ProductListing(){
 
                   <div className="card-sub-section">
                   <div className="card">
-                    <img src={imagechinese} alt="biryani" style={{width:"100%"}} />
+                    <img src={imagechinese}  className ="home-image-card" alt="delicious chinese" style={{width:"100%"}} />
                     <h1>Chinese</h1>
                     <p className="price">₹100* Ownwards</p>
                     <p>Order from best resturants</p>
@@ -116,7 +116,7 @@ function ProductListing(){
                   </div>
 
                   <div className="card">
-                    <img src={imagecake} alt="biryani" style={{width:"100%"}} />
+                    <img src={imagecake}className ="home-image-card" alt="delicious cake" style={{width:"100%"}} />
                     <h1>Cakes and Pastries</h1>
                     <p className="price">₹100* Onwards</p>
                     <p>Order from best resturants</p>
@@ -127,7 +127,7 @@ function ProductListing(){
                   </div>
 
                   <div className="card">
-                    <img src={imagechinese} alt="biryani" style={{width:"100%"}} />
+                    <img src={imagechinese} className ="home-image-card" alt="delicous chinese" style={{width:"100%"}} />
                     <h1>Chinese</h1>
                     <p className="price">₹100* Ownwards</p>
                     <p>Order from best resturants</p>
@@ -141,7 +141,7 @@ function ProductListing(){
                 <div class="card-sub-section">
 
                   <div className="card">
-                    <img src={imagebiryani} alt="biryani" style={{width:"100%"}} />
+                    <img src={imagebiryani} className ="home-image-card" alt="delicious biryani" style={{width:"100%"}} />
                     <h1>Chinese</h1>
                     <p className="price">₹100* Ownwards</p>
                     <p>Order from best resturants</p>
@@ -152,7 +152,7 @@ function ProductListing(){
                   </div>
 
                   <div className="card">
-                    <img src={imagecake} alt="biryani" style={{width:"100%"}} />
+                    <img src={imagecake} className ="home-image-card" alt="delicious cake" style={{width:"100%"}} />
                     <h1>Cakes and Pastries</h1>
                     <p className="price">₹100* Onwards</p>
                     <p>Order from best resturants</p>
@@ -163,7 +163,7 @@ function ProductListing(){
                   </div>
 
                   <div className="card">
-                    <img src={imagechinese} alt="biryani" style={{width:"100%"}} />
+                    <img src={imagechinese} className ="home-image-card" alt="delicious chinese" style={{width:"100%"}} />
                     <h1>Chinese</h1>
                     <p className="price">₹100* Ownwards</p>
                     <p>Order from best resturants</p>
@@ -177,7 +177,7 @@ function ProductListing(){
     <div className="card-sub-section">
 
     <div className="card">
-                    <img src={imagecake} alt="biryani" style={{width:"100%"}} />
+                    <img src={imagecake} className ="home-image-card" alt="delicious cake" style={{width:"100%"}} />
                     <h1>Cakes and Pastries</h1>
                     <p className="price">₹100* Onwards</p>
                     <p>Order from best resturants</p>
@@ -188,7 +188,7 @@ function ProductListing(){
                   </div>
 
                   <div className="card">
-                    <img src={imagechinese} alt="biryani" style={{width:"100%"}} />
+                    <img src={imagechinese} className ="home-image-card" alt="delicious chinese" style={{width:"100%"}} />
                     <h1>Chinese</h1>
                     <p className="price">₹100* Ownwards</p>
                     <p>Order from best resturants</p>
@@ -199,7 +199,7 @@ function ProductListing(){
                   </div>
 
                   <div className="card">
-                    <img src={imagechinese} alt="biryani" style={{width:"100%"}} />
+                    <img src={imagechinese} className ="home-image-card" alt="delicious chinese" style={{width:"100%"}} />
                     <h1>Chinese</h1>
                     <p className="price">₹100* Ownwards</p>
                     <p>Order from best resturants</p>

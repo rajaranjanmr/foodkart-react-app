@@ -2,12 +2,14 @@ import { Link } from 'react-router-dom'
 import {Navigation} from '../components/Navigation'
 import '../components/clhome.css'
 import '../components/navigation.css'
+import './home.css'
 import biryaniimage from '../assets/images/biryaniimg.jpeg'
 import thaaliimage from '../assets/images/thalis.jpeg'
 import cakesimage from '../assets/images/cakes.jpeg'
 import chineseimage from '../assets/images/chinese.webp'
 import imageavtaar from '../assets/images/avatar-the-grinch-green-plant-recycling-symbol-food-transparent-png-1652162.png'
 import React,{useState} from "react"
+
 
 export default function Home(){
 
@@ -31,28 +33,28 @@ export default function Home(){
 
 <div className="card">
 
-    <img src={biryaniimage} alt="biryani" style={{width:"100%"}}/>
+    <img src={biryaniimage} alt="biryani-pic" style={{width:"100%"}}/>
     <h1>Biryanis</h1>
     <p className="price">₹100* Onwards</p>
     <p>Order from best resturants</p>
     <p><Link to="/ProductListing">more</Link></p>
   </div>
   <div className="card">
-                <img src={thaaliimage} alt="biryani" style={{width:"100%"}} />
+                <img src={thaaliimage} alt="biryani-pic" className ="home-image-card" />
                 <h1>Thalis</h1>
                 <p className="price">₹100* Ownwards</p>
                 <p>Order from best resturants</p>
                 <p>< Link to="/ProductListing">more</Link></p>
               </div>
               <div className="card">
-                <img src={cakesimage} alt="biryani" style={{width:"100%"}} />
+                <img src={cakesimage} alt="cake-pic" className ="home-image-card" />
                 <h1>Cakes and Pastries</h1>
                 <p className="price">₹100* Onwards</p>
                 <p>Order from best resturants</p>
                 <p>< Link to="/ProductListing">more</Link></p >
               </div>
               <div className="card">
-                <img src={chineseimage} alt="biryani" style={{width:"100%"}}/>
+                <img src={chineseimage} alt="chienese-food-category-pic" className ="home-image-card"/>
                 <h1>Chinese</h1>
                 <p className="price">₹100* Ownwards</p>
                 <p>Order from best resturants</p>
@@ -68,7 +70,7 @@ export default function Home(){
       <form className="login-content login-animate" action="" >
         <div className="imgcontainer">
           <span className="close" onClick={clickLogInHandler} >&times;</span>
-          <img src={{imageavtaar}} alt="Avatar" className="avatar"/>
+          <img src={{imageavtaar}} alt="avataar image icon" className="avatar"/>
         </div>
     
         <div className="container-form">
@@ -77,7 +79,7 @@ export default function Home(){
     
           <label for="psw"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="psw" required />
-          <i className="fa fa-eye" aria-hidden="true" style={{color:"black", position:"relative",left:"95%", top:"-2.8rem",fontSize:"2rem"}}></i>
+          <i className="fa fa-eye home-fa-eye" aria-hidden="true" style={{}}></i>
             
           <button className="submit-btn">Login</button>
           
@@ -94,7 +96,7 @@ export default function Home(){
         <form className="login-content login-animate" action="" >
           <div className="imgcontainer">
             <span className="close" id="close-singup" onClick={clickSignInHandler}>&times;</span>
-            <img src={imageavtaar} alt="Avatar" className="avatar"/>
+            <img src={imageavtaar} alt="avatar image icon" className="avatar"/>
           </div>
       
           <div className="container-form">
