@@ -1,0 +1,98 @@
+:root{
+    --cart-card-background-color:#082032;
+    --cart-card-aliceblue-color:aliceblue;
+    --cart-card-a-hover-color:blueviolet;
+    --cart-card-white-color:white;
+    --cart-card-black-color:black;
+}
+body{
+    background-image: url('../assets/images/updatedbg.jpeg');
+    background-size: cover;
+    width:100%;
+    height: 100%;
+    }
+.filter-section{
+    display:flex;
+    justify-content: end;
+    position: relative;
+    top:7rem;
+    right:1rem;
+}
+.filter-container{
+    padding:2rem;
+}
+.card {
+    box-shadow:  0 0 10px 10px var(--cart-card-aliceblue-color);
+     max-width: 18.75rem;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    background-color: var(--cart-card-aliceblue-color);
+  }
+
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  .card-btn-add{
+    display: inline;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+  
+  .card a {
+    border: none;
+    outline: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 11.2px;
+    padding-bottom: 0.5rem;
+    color: var(--cart-card-white-color);
+    background-color: var(--cart-card-background-color);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    position: relative;
+    font-weight: 800;
+    top:2rem;   
+
+  }
+  .card a{
+      text-decoration:  none;
+      border-radius:5px;
+  }
+  .card a:hover {
+    color:var(--cart-card-a-hover-color);
+    opacity: 1;
+    border:none;
+    background-color: var(--primary-color)
+  }
+  .cards{
+      display: flex;
+      flex-direction: row;
+      gap:1rem;
+      justify-content: space-evenly;
+      text-align:center;
+      width:100%;
+      flex-wrap: wrap-reverse;
+      position: absolute;
+    top:10rem;
+  }
+  .cards-section{
+    display: flex;
+    flex-direction: column;
+    gap:3.5rem;
+    text-align:center;
+    width:75%;
+    position: absolute;
+  top:6rem;
+  }
+  
+  .card-sub-section{
+      display:flex;
+      flex-direction: row;
+      gap:0.5rem;
+      
+  }

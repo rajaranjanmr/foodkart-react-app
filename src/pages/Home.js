@@ -35,28 +35,28 @@ export default function Home(){
     <h1>Biryanis</h1>
     <p className="price">₹100* Onwards</p>
     <p>Order from best resturants</p>
-    <p><a href="prodlisting/prodlisting.html">more</a></p>
+    <p><Link to="/ProductListing">more</Link></p>
   </div>
   <div className="card">
                 <img src={thaaliimage} alt="biryani" style={{width:"100%"}} />
                 <h1>Thalis</h1>
                 <p className="price">₹100* Ownwards</p>
                 <p>Order from best resturants</p>
-                <p><a href="prodlisting/prodlisting.html">more</a></p>
+                <p>< Link to="/ProductListing">more</Link></p>
               </div>
               <div className="card">
                 <img src={cakesimage} alt="biryani" style={{width:"100%"}} />
                 <h1>Cakes and Pastries</h1>
                 <p className="price">₹100* Onwards</p>
                 <p>Order from best resturants</p>
-                <p><a href="prodlisting/prodlisting.html">more</a></p >
+                <p>< Link to="/ProductListing">more</Link></p >
               </div>
               <div className="card">
                 <img src={chineseimage} alt="biryani" style={{width:"100%"}}/>
                 <h1>Chinese</h1>
                 <p className="price">₹100* Ownwards</p>
                 <p>Order from best resturants</p>
-                <p><a href="prodlisting/prodlisting.html">more</a></p>
+                <p>< Link to="/ProductListing">more</Link></p>
               </div>
   </div>
     <div className="button-container">

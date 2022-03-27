@@ -6,6 +6,7 @@ import Wishlist from "./pages/Wishlist";
 import { Link } from "react-router-dom";
 import Logout from "./pages/Logout";
 import { Navigation } from "./components/Navigation";
+import {ProductListing} from "./pages/ProductListing";
 
 export default function Main() {
   return (
@@ -16,7 +17,8 @@ export default function Main() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/productlisting" element={<ProductListing/>} />
       </Routes>
-    </div>
+    </div> 
   );
 }
