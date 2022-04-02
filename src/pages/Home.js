@@ -8,11 +8,12 @@ import thaaliimage from '../assets/images/thalis.jpeg'
 import cakesimage from '../assets/images/cakes.jpeg'
 import chineseimage from '../assets/images/chinese.webp'
 import imageavtaar from '../assets/images/avatar-the-grinch-green-plant-recycling-symbol-food-transparent-png-1652162.png'
-import React,{useState} from "react"
-
+import React,{useState,useEffect} from "react"
+import HomepageCategory from '../components/homepage-category-cart'
+import {apiCall} from "../utility/apiCall"
 
 export default function Home(){
-
+    const [category,setCategory] = useState([])
     const [displayLogIn,setDisplayLogIn] = useState("none")
     const [displaySignIn,setDisplaySignIn] = useState("none")
     function clickLogInHandler(){
@@ -27,9 +28,45 @@ export default function Home(){
         if(displaySignIn==="block")
         setDisplaySignIn("none")
     }
+  //   useEffect(() => {
+  //     async function callAsync(load, shouldFail) {
+  //       setStatus("loading");
+  //       try {
+  //         const response = await fakeFetch(load, shouldFail);
+  //         setStatus("success");
+  //         setData(response);
+  //       } catch (error) {
+  //         setStatus("error");
+  //         setError(error);
+  //       }
+  //     }
+  //     callAsync(msg);
+  //   }, [msg]);
+  
+  //   return { data, status, error };
+  // };
+    useEffect(()=>{
+         apiCall('GET','/api/categories').then((response)=>{
+        setCategory( response.data.categories)
+       }).catch((e)=>{
+        console.log(e)
+
+       })
+    },[])
+    console.log(category)
+
     return(
+
         <div className="container">
-            <div className="cards">
+          <div className="cards">
+          {category.map(data=>{
+            return <HomepageCategory value={data}/>
+          })}
+          </div>
+          
+        
+
+            {/* <div className="cards">
 
 <div className="card">
 
@@ -60,7 +97,7 @@ export default function Home(){
                 <p>Order from best resturants</p>
                 <p>< Link to="/ProductListing">more</Link></p>
               </div>
-  </div>
+  </div> */}
     <div className="button-container">
         <button className="login-btn-ecom" onClick={()=>clickLogInHandler()}>Login</button>
         <button className="signup-btn-ecom" onClick={()=>clickSignInHandler()}>Signup</button>

@@ -7,10 +7,11 @@ import { Link } from "react-router-dom";
 import Logout from "./pages/Logout";
 import { Navigation } from "./components/Navigation";
 import {ProductListing} from "./pages/ProductListing";
+import MockAPI from "./pages/Mockapi";
 
 export default function Main() {
   return (
-    <div className="MainComp">
+    <>
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -18,7 +19,8 @@ export default function Main() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/productlisting" element={<ProductListing/>} />
+        <Route path="/mockman" element={<MockAPI/>} />
       </Routes>
-    </div> 
+      </>
   );
 }
