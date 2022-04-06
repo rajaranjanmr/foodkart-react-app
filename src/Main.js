@@ -6,7 +6,7 @@ import Wishlist from "./pages/Wishlist";
 import { Link } from "react-router-dom";
 import Logout from "./pages/Logout";
 import { Navigation } from "./components/Navigation";
-import {ProductListing} from "./pages/ProductListing";
+import { ProductListing } from "./pages/ProductListing";
 import MockAPI from "./pages/Mockapi";
 
 export default function Main() {
@@ -18,9 +18,9 @@ export default function Main() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/logout" element={<Logout />} />
-        <Route path="/productlisting" element={<ProductListing/>} />
-        <Route path="/mockman" element={<MockAPI/>} />
+        <Route path="/productlisting" element={<ProductListing />} />
+        <Route path="/mockman" element={<MockAPI />} />
       </Routes>
-      </>
+    </>
   );
 }

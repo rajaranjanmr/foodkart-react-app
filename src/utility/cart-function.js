@@ -1,91 +1,43 @@
 import axios from "axios";
 import { apiCall } from "./apiCall";
+import { encodedToken } from "../context/product-page-context";
 
-const addToCart = async (cartList, dispatch, item) => {
-  try {
-    const encodedToken = localStorage.getItem("token");
-    if (cartList.find((element) => element.id === item.id)) {
-      console.log("already present");
-    } else {
-      const response = await apiCall("post", "/api/user/cart", encodedToken, item);
-      dispatch({
-        type: "cartList",
-        payload: response.data.cart,
-      });
-    }
-  } catch (error) {
-    console.error(error);
-  }
+function getCartItem() {}
+const addToCart = async (item, setCart) => {
+  // console.log(item._id)
+  const response = await apiCall("POST", "/api/user/cart", encodedToken, item);
+  setCart(response.data.cart);
+  console.log(response.data.cart);
 };
 
-const removeFromCart = async (dispatch, item) => {
-  try {
-    const encodedToken = localStorage.getItem("token");
-    const response = await apiCall(
-      "DELETE",
-      `/api/user/cart/${item._id}`,
-      encodedToken,
-      item
-    );
-    dispatch({
-      type: "cartList",
-      payload: response.data.cart,
-    });
-  } catch (error) {
-    console.error(error);
-  }
+const removeFromCart = async (item, setCart) => {
+  const response = await apiCall(
+    "DELETE",
+    `/api/user/cart/${item._id}`,
+    encodedToken,
+    item
+  );
+  console.log(response);
+  setCart(response.data.cart);
 };
 
-const incrementQytInCartList = async (dispatch, id) => {
-  try {
-    const encodedToken = localStorage.getItem("token");    
-    const response = await axios({
-      method: "post",
-      url: `/api/user/cart/${id}`,
-      headers: { authorization: encodedToken },
-      data: {
-        action: {
-          type: "increment",
-        },
-      },
-    });
-    dispatch({
-      type: "cartList",
-      payload: response.data.cart,
-    });
-  } catch (error) {
-    console.error(error);
-  }
+const incrementItemCart = async (item, setCart) => {
+  const response = await apiCall(
+    "POST",
+    `/api/user/cart/${item._id}`,
+    encodedToken,
+    item
+  );
+  setCart(response.data.cart);
+};
+const decrementItemCart = async (item, setCart) => {
+  const response = await apiCall(
+    "POST",
+    `/api/user/cart/${item._id}`,
+    encodedToken,
+    item
+  );
+  setCart(response.data.cart);
 };
 
-const decrementQytInCartList = async (dispatch, id, qty) => {
-  try {
-    const encodedToken = localStorage.getItem("token");
-    if (qty === 1) {
-      return console.log("no more decrements");
-    }
-    const response = await axios({
-      method: "post",
-      url: `/api/user/cart/${id}`,
-      headers: { authorization: encodedToken },
-      data: {
-        action: {
-          type: "decrement",
-        },
-      },
-    });
-    dispatch({
-      type: "cartList",
-      payload: response.data.cart,
-    });
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-export {
-  addToCart,
-  removeFromCart,
-  incrementQytInCartList,
-  decrementQytInCartList,
-};
+export { removeFromCart, incrementItemCart, decrementItemCart, addToCart };

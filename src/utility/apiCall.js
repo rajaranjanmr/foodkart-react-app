@@ -9,7 +9,7 @@ const apiCall = async (method, url, encodedToken, item) => {
         product: item,
       },
     });
-    return response
+    return response;
   } catch (error) {
     console.error(error);
   }
