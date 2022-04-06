@@ -1,13 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import Main from './Main'
+import { ProductContextProvider } from './context/product-page-context';
 
 function App() {
   return (
-    <div>
+    <ProductContextProvider>
       <Main/>
       
-    </div>
+      </ProductContextProvider>
+
   );
 }
 

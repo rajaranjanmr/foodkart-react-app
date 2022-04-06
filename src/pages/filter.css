@@ -1,5 +1,5 @@
 .filter-container{
-    width:15%;
+    /* width:15%; */
     background-color: aliceblue;
     display: flex;
     flex-direction: column;

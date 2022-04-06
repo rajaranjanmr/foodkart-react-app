@@ -3,11 +3,31 @@ import imagebiryani from '../assets/images/biryaniimg.jpeg'
 import imagethali from '../assets/images/thalis.jpeg'
 import imagecake from '../assets/images/cakes.jpeg'
 import imagechinese from '../assets/images/chinese.webp'
-
+import React,{useState,useEffect} from "react";
+import { apiCall } from '../utility/apiCall'
 import './filter.css'
+import ProuductListingCart from '../components/productlisting-cart'
+import { categoryHandler } from '../utility/filter-functions'
+import { useProductContext } from '../context/product-page-context'
 function ProductListing(){
+    const [productList,setProducutList] = useState([])
+    useEffect(()=>{
+        apiCall('GET','/api/products').then((response)=>{
+       setProducutList( response.data.products)
+      }).catch((e)=>{
+       console.log(e)
+
+      })
+   },[])
+
+  const {productPageState: {categoryName}} = useProductContext();
+
+
+    const prod = categoryHandler(productList, categoryName);
+    console.log(prod, categoryName)
+
     return(
-        <div className="container">
+        <div className="wrapper">
             <div className="filter-section">
           <div className="filter-container">
             <div className="filter-top-contain">
@@ -67,150 +87,15 @@ function ProductListing(){
         </div>
 
         <div className="cards-section">
-                    <div className="card-sub-section">
-                        <div className="card">
-                    <img src={imagebiryani} className ="home-image-card" alt="delicious biryani" style={{width:"100%"}} />
-                    <h1>Biryanis</h1>
-                    <p clclassNameass="price">₹100* Onwards</p>
-                    <p>Order from best resturants</p>
-                    <div className="card-btn-add">
-                        <p><a href="#">cart</a></p>
-                        <p><a href="#" >wishlist</a></p>
-                    </div>
-                  </div>
-                  
-                  <div className="card">
-                    <img src={imagethali} className ="home-image-card" alt="delicious thali" style={{width:"100%"}} />
-                    <h1>Thalis</h1>
-                    <p className="price">₹100* Ownwards</p>
-                    <p>Order from best resturants</p>
-                    <div className="card-btn-add">
-                        <p><a href="#">cart</a></p>
-                        <p><a href="#" >wishlist</a></p>
-                        </div>
+                        {prod.map(x=>{
+                            return <ProuductListingCart value={x} />
+                        })}
+                       
                   </div>
 
-                  <div className="card">
-                    <img src={imagecake} className ="home-image-card" alt="delicious cake" style={{width:"100%"}} />
-                    <h1>Cakes and Pastries</h1>
-                    <p className="price">₹100* Onwards</p>
-                    <p>Order from best resturants</p>
-                    <div className="card-btn-add">
-                        <p><a href="#">cart</a></p>
-                        <p><a href="#" >wishlist</a></p>
-                    </div>
-                  </div>
-                  </div>
-
-                  <div className="card-sub-section">
-                  <div className="card">
-                    <img src={imagechinese}  className ="home-image-card" alt="delicious chinese" style={{width:"100%"}} />
-                    <h1>Chinese</h1>
-                    <p className="price">₹100* Ownwards</p>
-                    <p>Order from best resturants</p>
-                    <div className="card-btn-add">
-                        <p><a href="#">cart</a></p>
-                        <p><a href="#" >wishlist</a></p>
-                    </div>
-                    
-                  </div>
-
-                  <div className="card">
-                    <img src={imagecake}className ="home-image-card" alt="delicious cake" style={{width:"100%"}} />
-                    <h1>Cakes and Pastries</h1>
-                    <p className="price">₹100* Onwards</p>
-                    <p>Order from best resturants</p>
-                    <div className="card-btn-add">
-                        <p><a href="#">cart</a></p>
-                        <p><a href="#" >wishlist</a></p>
-                    </div>
-                  </div>
-
-                  <div className="card">
-                    <img src={imagechinese} className ="home-image-card" alt="delicous chinese" style={{width:"100%"}} />
-                    <h1>Chinese</h1>
-                    <p className="price">₹100* Ownwards</p>
-                    <p>Order from best resturants</p>
-                    <div className="card-btn-add">
-                        <p><a href="#">cart</a></p>
-                        <p><a href="#" >wishlist</a></p>
-                    </div>
-                  </div>
-    </div>
-                
-                <div class="card-sub-section">
-
-                  <div className="card">
-                    <img src={imagebiryani} className ="home-image-card" alt="delicious biryani" style={{width:"100%"}} />
-                    <h1>Chinese</h1>
-                    <p className="price">₹100* Ownwards</p>
-                    <p>Order from best resturants</p>
-                    <div className="card-btn-add">
-                        <p><a href="#">cart</a></p>
-                        <p><a href="#" >wishlist</a></p>
-                    </div>
-                  </div>
-
-                  <div className="card">
-                    <img src={imagecake} className ="home-image-card" alt="delicious cake" style={{width:"100%"}} />
-                    <h1>Cakes and Pastries</h1>
-                    <p className="price">₹100* Onwards</p>
-                    <p>Order from best resturants</p>
-                    <div className="card-btn-add">
-                        <p><a href="#">cart</a></p>
-                        <p><a href="#" >wishlist</a></p>
-                    </div>
-                  </div>
-
-                  <div className="card">
-                    <img src={imagechinese} className ="home-image-card" alt="delicious chinese" style={{width:"100%"}} />
-                    <h1>Chinese</h1>
-                    <p className="price">₹100* Ownwards</p>
-                    <p>Order from best resturants</p>
-                    <div className="card-btn-add">
-                        <p><a href="#">cart</a></p>
-                        <p><a href="#" >wishlist</a></p>
-                    </div>
-                  </div>
-</div>
-
-    <div className="card-sub-section">
-
-    <div className="card">
-                    <img src={imagecake} className ="home-image-card" alt="delicious cake" style={{width:"100%"}} />
-                    <h1>Cakes and Pastries</h1>
-                    <p className="price">₹100* Onwards</p>
-                    <p>Order from best resturants</p>
-                    <div className="card-btn-add">
-                        <p><a href="#">cart</a></p>
-                        <p><a href="#" >wishlist</a></p>
-                    </div>
-                  </div>
-
-                  <div className="card">
-                    <img src={imagechinese} className ="home-image-card" alt="delicious chinese" style={{width:"100%"}} />
-                    <h1>Chinese</h1>
-                    <p className="price">₹100* Ownwards</p>
-                    <p>Order from best resturants</p>
-                    <div className="card-btn-add">
-                        <p><a href="#">cart</a></p>
-                        <p><a href="#" >wishlist</a></p>
-                    </div>
-                  </div>
-
-                  <div className="card">
-                    <img src={imagechinese} className ="home-image-card" alt="delicious chinese" style={{width:"100%"}} />
-                    <h1>Chinese</h1>
-                    <p className="price">₹100* Ownwards</p>
-                    <p>Order from best resturants</p>
-                    <div className="card-btn-add">
-                        <p><a href="#">cart</a></p>
-                        <p><a href="#" >wishlist</a></p>
-                        </div>
-                  </div>
-
-        </div>
-        </div>
+    
+        
+        
 
             </div>
             

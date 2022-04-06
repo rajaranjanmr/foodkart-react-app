@@ -253,4 +253,16 @@ iframe{
     transform: scale(1); 
     overflow:hidden;
 }
+.button-container{
+    padding: 5rem;
+    position: relative;
+    left: 39%;
+    top: 60%;
+    display: flex;
+    gap: 1em;
+    width: 24%;
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
 
