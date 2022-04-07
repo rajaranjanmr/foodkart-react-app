@@ -25,7 +25,8 @@ const incrementItemWishList = async (item, setWishList) => {
     "POST",
     `/api/user/cart/${item._id}`,
     encodedToken,
-    item
+    item,
+
   );
   setWishList(response.data.wishlist);
 };
