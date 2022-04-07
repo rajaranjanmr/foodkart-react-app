@@ -20,9 +20,6 @@ export default function Cart() {
       });
     if (data === null) setMessage("your Cart is empty");
   }, []);
-
-  // calculations
-
   return (
     <div>
       <div class="header-cart">

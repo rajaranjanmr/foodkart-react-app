@@ -20,23 +20,37 @@ const removeFromCart = async (item, setCart) => {
   setCart(response.data.cart); 
 };
 
-const incrementItemCart = async (item, setCart) => {
-  const response = await apiCall(
-    "POST",
-    `/api/user/cart/${item._id}`,
-    encodedToken,
-    item
-  );
+const incrementItemCart = async (id, setCart) => {
+  const response = await axios({
+    method: 'post',
+    url: `/api/user/cart/${id}`,
+    headers: { authorization: encodedToken },
+    data: {
+      action:{
+        type:'increment'
+      }
+    },
+    
+  });
+    
+  console.log('from incre',response)
   setCart(response.data.cart);
 };
-const decrementItemCart = async (item, setCart) => {
-  const response = await apiCall(
-    "POST",
-    `/api/user/cart/${item._id}`,
-    encodedToken,
-    item
-  );
-  setCart(response.data.cart);
+const decrementItemCart = async (id, setCart) => {
+  const response = await axios({
+    method: 'post',
+    url: `/api/user/cart/${id}`,
+    headers: { authorization: encodedToken },
+    data: {
+      action:{
+        type:'decrement'
+      }
+    },
+    
+  });
+    
+  console.log('from incre',response)
+  setCart(response.data.cart);;
 };
 
 export { removeFromCart, incrementItemCart, decrementItemCart, addToCart };

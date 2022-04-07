@@ -1,5 +1,5 @@
 import axios from "axios";
-const apiCall = async (method, url, encodedToken, item) => {
+const apiCall = async (method, url, encodedToken, item,types) => {
   try {
     const response = await axios({
       method: method,
@@ -8,6 +8,9 @@ const apiCall = async (method, url, encodedToken, item) => {
       data: {
         product: item,
       },
+      action:{
+        type:types
+      }
     });
     return response;
   } catch (error) {

@@ -14,6 +14,7 @@ function WishListing({ value }) {
   const { setCart } = useCart();
   const [qty, setQty] = useState(1);
   function incrementClickHandler() {
+    
     incrementItemWishList(value, setWishList);
   }
   function decrementClickHandler() {
@@ -24,18 +25,6 @@ function WishListing({ value }) {
       <img src={value.image} alt="biryani" style={{ width: "100%" }} />
       <h1>Biryani</h1>
       <p className="price">₹300 (10%off)</p>
-      <div class="quantity-up-down">
-        Quantity :
-        <p>
-          <i className="fa fa-plus" onClick={() => incrementClickHandler()}></i>
-        </p>
-        <p style={{ border: "1px solid black", display: "inline" }}>
-          {value.qty}
-        </p>
-        <p>
-          <i class="fa fa-minus" onClick={() => decrementClickHandler()}></i>
-        </p>
-      </div>
       <div className="card-btn-add">
         <p>
           <button onClick={() => removeFromWishList(value, setWishList)}>

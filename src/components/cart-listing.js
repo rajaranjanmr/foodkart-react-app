@@ -13,17 +13,11 @@ function CartListing({ value }) {
   const [qty, setQty] = useState(1);
   const { setCart } = useCart();
   const { setWishList } = useWishList();
-   function incrementClickHandler() {
-
-    
-  //   setQty(qty + 1);
-  //   value.qty = qty;
-  //   incrementItemCart(value, setCart);
+   function incrementClickHandler(value) {    
+    incrementItemCart(value._id,setCart)
   }
-  function decrementClickHandler() {
-    // if (qty > 0) setQty(qty - 1);
-    // value.qty = qty;
-    // decrementItemCart(value, setCart);
+  function decrementClickHandler(value) {
+    decrementItemCart(value._id,setCart)
   } 
 
   return (
@@ -34,15 +28,15 @@ function CartListing({ value }) {
       <div className="quantity-up-down">
         Quantity :
         <p>
-          <i className="fa fa-plus" onClick={() => incrementClickHandler()}></i>
+          <i className="fa fa-plus" onClick={() => incrementClickHandler(value)}></i>
         </p>
-        <p style={{ border: "1px solid black", display: "inline" }}>
+        <p style={{ border: "1px solid black", display: "inline" }} >
           {value.qty}
         </p>
         <p>
           <i
             className="fa fa-minus"
-            onClick={() => decrementClickHandler()}
+            onClick={() => decrementClickHandler(value)}
           ></i>
         </p>
       </div>
