@@ -1,7 +1,8 @@
-export default function Logout(){
-    return(
-        <div>
-            <h1>its logout</h1>
-        </div>
-    )
+import "../pages/Cart.css";
+export default function Logout() {
+  return (
+    <div className="header-cart">
+      <h1>************ You are Logged Out ************</h1>
+    </div>
+  );
 }
