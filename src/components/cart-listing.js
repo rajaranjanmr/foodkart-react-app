@@ -8,6 +8,7 @@ import {
 import { useCart } from "../context/cart-context";
 import { addToWishList } from "../utility/wishlist-function";
 import { useWishList } from "../context/wishlist-context";
+import './card-listing.css'
 
 function CartListing({ value }) {
   const [qty, setQty] = useState(1);
@@ -30,7 +31,7 @@ function CartListing({ value }) {
         <p>
           <i className="fa fa-plus" onClick={() => incrementClickHandler(value)}></i>
         </p>
-        <p style={{ border: "1px solid black", display: "inline" }} >
+        <p clasName="card-ptag"style={{  }} >
           {value.qty}
         </p>
         <p>
