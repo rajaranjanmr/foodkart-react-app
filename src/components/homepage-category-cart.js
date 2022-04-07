@@ -3,8 +3,6 @@ import { useProductContext } from "../context/product-page-context";
 import { ProductListing } from "../pages/ProductListing";
 
 function HomepageCategory(props) {
-  console.log(props.value.image);
-
   const { productPageDispatch } = useProductContext();
 
   return (

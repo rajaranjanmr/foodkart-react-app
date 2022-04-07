@@ -16,7 +16,7 @@ function ProductListing() {
   } = useProductContext();
 
   const [range, setRange] = useState(null);
-  const [radio, setRadio] = useState(0);
+  const [radio, setRadio] = useState({a:0,b:0});
   const { cart, setCart } = useContext(CartContext);
   const { wishList, setWishList } = useWishList();
   const [checkCategory, setCheckCategory] = useState({
@@ -27,11 +27,11 @@ function ProductListing() {
   });
 
   function radioBasis(list, radio) {
-    if (radio === 0) {
+    if (radio.a === 0 && radio.b===0) {
       return list;
     }
     const filteredData = [...list].filter((x) =>
-      Number(x.price < Number(radio))
+      (Number(x.price) >= Number(radio.a) && Number(x.price) <= Number(radio.b))
     );
     return filteredData;
   }
@@ -47,11 +47,39 @@ function ProductListing() {
           item.type === "veg" || item.type === "nonveg" || item.type === "gravy"
       );
     }
-    if (nonveg) {
-      return [...list].filter((item) => item.type === "nonveg");
+    if (nonveg && gravy && dry) {
+      return [...list].filter(
+        (item) =>
+         item.type === "nonveg" || item.type==="gravy" || item.type === "dry");
+    }
+    if(gravy && dry){
+      return [...list].filter(
+        (item) =>
+          item.type==="gravy" || item.type === "dry");
+    }
+    if(gravy){
+      return [...list].filter(
+        (item) =>
+          item.type==="gravy");
+    }
+    if(dry){
+      return [...list].filter(
+        (item) =>
+          item.type === "dry");
+    }
+    if(nonveg){
+      return [...list].filter(
+        (item) =>
+          item.type==="nonveg");
+    }
+    if(veg){
+      return [...list].filter(
+        (item) =>
+          item.type==="veg");
     }
     return list;
   }
+  
 
   function rangeFilter(list, range) {
     if (range === null) {
@@ -67,11 +95,6 @@ function ProductListing() {
   const sortByPrice = radioBasis(categoryProducts, radio);
   const sortByCat = checkBoxFilter(sortByPrice, checkCategory);
   const filterByRating = rangeFilter(sortByCat, range);
-
-  console.log(categoryProducts);
-  console.log(sortByPrice);
-  console.log(filterByRating);
-
   return (
     <div className="wrapper">
       <div className="filter-section">
@@ -90,7 +113,7 @@ function ProductListing() {
                 type="radio"
                 name="price"
                 value="low"
-                onClick={() => setRadio(120)}
+                onClick={() => setRadio({a:70,b:120})}
               />
               70-120
             </label>
@@ -99,7 +122,7 @@ function ProductListing() {
                 type="radio"
                 name="price"
                 value="low"
-                onClick={() => setRadio(180)}
+                onClick={() => setRadio({a:130,b:180})}
               />
               130-180
             </label>
@@ -108,7 +131,7 @@ function ProductListing() {
                 type="radio"
                 name="price"
                 value="low"
-                onClick={() => setRadio(220)}
+                onClick={() => setRadio({a:190,b:220})}
               />
               190-220
             </label>
@@ -117,7 +140,7 @@ function ProductListing() {
                 type="radio"
                 name="price"
                 value="low"
-                onClick={() => setRadio(300)}
+                onClick={() => setRadio({a:230,b:300})}
               />
               230-300
             </label>

@@ -3,7 +3,6 @@ import "./rating.css";
 
 function Rating() {
   const [rate, setRate] = useState(0);
-  console.log();
   return (
     <div className="star-rating">
       <input type="radio" id="5-stars" name="rating" value="5" />

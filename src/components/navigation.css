@@ -3,6 +3,11 @@
   margin: 0;
   box-sizing: border-box;
 }
+:root{
+  --price-color:grey;
+  --button-background-color : #082032;
+  --button-nav-color : white;
+}
 .top-section {
   width: 100%;
   background-color: var(--primary-color);
@@ -41,52 +46,11 @@
 }
 
 .price {
-  color: grey;
+  color: var(--price-color);
   font-size: 1.37rem;
 }
 
-/* .card a {
-    border: none;
-    outline: 0;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 0.7em;
-    padding-bottom: 0.5rem;
-    color: white;
-    background-color: #082032;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-    position: relative;
-    font-weight: 800;
-    top:2rem;   
-  } */
-/* .card a{
-      text-decoration:  none;
-      border-radius:5px;
-  } */
-/* .card a:hover {
-    color:blueviolet;
-    opacity: 1;
-    border:none;
-    background-color: var(--primary-color)
-  }
-  .cards{
-      display: flex;
-      flex-direction: row;
-      gap:1rem;
-      justify-content: space-evenly;
-      text-align:center;
-      width:100%;
-      flex-wrap: wrap-reverse;
-        /* z-index:0; */
-/*       
-     position: absolute;
-    top:10rem;
-
-  } */
-*/ .button-container {
+ .button-container {
   display: flex;
   flex-direction: row;
   width: 20%;
@@ -97,19 +61,17 @@
   gap: 2rem;
   justify-content: center;
   left: 40%;
-  border-radius: 15px;
+  border-radius: 0.8rem;
+
 }
 .button-container button {
   outline: 0;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 0.7em;
-  padding-bottom: 0.5rem;
-  color: white;
-  background-color: #082032;
+  padding : 0.7rem 2rem 0.5rem 2rem;
+  color: var(--button-nav-color);
+  background-color: var(--button-background-color);
   text-align: center;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1rem;
   border-radius: 10px;
   text-align: center;
   font-weight: 800;

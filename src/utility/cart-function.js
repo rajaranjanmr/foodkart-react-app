@@ -4,8 +4,7 @@ import { encodedToken } from "../context/product-page-context";
 
 function getCartItem() {}
 const addToCart = async (item, setCart) => {
-  // console.log(item._id)
-  const response = await apiCall("POST", "/api/user/cart", encodedToken, item);
+    const response = await apiCall("POST", "/api/user/cart", encodedToken, item);
   setCart(response.data.cart);
   console.log(response.data.cart);
 };
@@ -18,7 +17,7 @@ const removeFromCart = async (item, setCart) => {
     item
   );
   console.log(response);
-  setCart(response.data.cart);
+  setCart(response.data.cart); 
 };
 
 const incrementItemCart = async (item, setCart) => {

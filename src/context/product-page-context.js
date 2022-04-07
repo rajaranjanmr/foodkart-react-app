@@ -21,7 +21,7 @@ const ProductContextProvider = ({ children }) => {
       categoryName: "",
       productList: [],
     }
-  );
+  ); 
 
   useEffect(() => {
     apiCall("GET", "/api/products")

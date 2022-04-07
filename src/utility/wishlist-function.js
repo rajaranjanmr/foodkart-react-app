@@ -10,7 +10,6 @@ const addToWishList = async (item, setWishList) => {
     item
   );
   setWishList(response.data.wishlist);
-  console.log(response.data.wishlist);
 };
 const removeFromWishList = async (item, setWishList) => {
   const response = await apiCall(

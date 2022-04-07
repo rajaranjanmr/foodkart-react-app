@@ -1,20 +1,21 @@
 import { Link } from "react-router-dom";
 import "../pages/Cart.css";
 
-function Checkout({ value }) {
+function Checkout(props) {
   let tots = 0;
   let totPrice = 0;
-  console.log("inside chedkout", value);
-  function calculateTotal() {
-    for (let i = 0; i < value.length; i++) {
-      tots +=
-        Number(value[i].price) * Number(value.qty) +
-        Number(value.del) -
-        Number(value.dis);
-      totPrice += Number(value[i].price) * Number(value.qty);
-    }
+  let dis =0
+  let del = props.value[0].del
+    function totalCalculation(){
+  for(let i =0;i<props.value.length;i++){
+    dis += props.value[i].dis
+    tots+=(props.value[i].price)*(props.value[i].qty)
+    
   }
-  calculateTotal();
+  totPrice = (tots + del) - dis;
+}
+totalCalculation()
+ 
   return (
     <div className="card-checkout">
       <h1>Price Details</h1>
@@ -26,12 +27,12 @@ function Checkout({ value }) {
 
         <div className="discount-det">
           <p> Discount</p>
-          <p>20</p>
+          <p>{dis}</p>
         </div>
 
         <div className="delivery-det">
           <p>Del charge</p>
-          <p>60</p>
+          <p>{del}</p>
         </div>
 
         <div className="tot-amount-det">

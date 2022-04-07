@@ -79,7 +79,7 @@
   color: var(--button-content-color);
   background-color: var(--button-background-color);
   text-align: center;
-  font-size: 18px;
+  font-size: 1rem;
   border-radius: 10px;
   text-align: center;
   font-weight: 800;

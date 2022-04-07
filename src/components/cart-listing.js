@@ -13,16 +13,18 @@ function CartListing({ value }) {
   const [qty, setQty] = useState(1);
   const { setCart } = useCart();
   const { setWishList } = useWishList();
-  function incrementClickHandler() {
-    setQty(qty + 1);
-    value.qty = qty;
-    incrementItemCart(value, setCart);
+   function incrementClickHandler() {
+
+    
+  //   setQty(qty + 1);
+  //   value.qty = qty;
+  //   incrementItemCart(value, setCart);
   }
   function decrementClickHandler() {
-    if (qty > 0) setQty(qty - 1);
-    value.qty = qty;
-    decrementItemCart(value, setCart);
-  }
+    // if (qty > 0) setQty(qty - 1);
+    // value.qty = qty;
+    // decrementItemCart(value, setCart);
+  } 
 
   return (
     <div className="card">

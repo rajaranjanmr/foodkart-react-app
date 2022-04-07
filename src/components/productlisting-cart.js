@@ -29,3 +29,4 @@ function ProuductListingCart({ value, addToCart, addToWishList }) {
   );
 }
 export default ProuductListingCart;
+ 

@@ -33,8 +33,6 @@ export default function Home() {
         console.log(e);
       });
   }, []);
-  console.log(category);
-
   return (
     <div className="container">
       <div className="cards">
@@ -72,7 +70,7 @@ export default function Home() {
           </div>
 
           <div className="container-form">
-            <label for="uname">
+            <label htmlFor="uname">
               <b>Email</b>
             </label>
             <input
@@ -82,7 +80,7 @@ export default function Home() {
               required
             />
 
-            <label for="psw">
+            <label htmlFor="psw">
               <b>Password</b>
             </label>
             <input

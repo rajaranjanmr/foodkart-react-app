@@ -6,7 +6,6 @@ import { CartListing } from "../components/cart-listing";
 import { Checkout } from "../components/Checkout";
 export default function Cart() {
   const { cart } = useCart();
-  console.log(cart);
   const [category, setCategory] = useState([]);
   const [message, setMessage] = useState("");
 
@@ -22,9 +21,8 @@ export default function Cart() {
     if (data === null) setMessage("your Cart is empty");
   }, []);
 
+  // calculations
 
-  console.log("its empty", true);
-  console.log(category);
   return (
     <div>
       <div class="header-cart">

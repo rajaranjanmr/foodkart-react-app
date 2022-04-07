@@ -10,18 +10,13 @@ import { useCart } from "../context/cart-context";
 import { useState } from "react";
 
 function WishListing({ value }) {
-  console.log(value);
   const { setWishList } = useWishList();
   const { setCart } = useCart();
   const [qty, setQty] = useState(1);
   function incrementClickHandler() {
-    // setQty((prev) => prev + 1);
-    // value.qty = qty;
     incrementItemWishList(value, setWishList);
   }
   function decrementClickHandler() {
-    // if (qty > 0) setQty((prev) => prev - 1);
-    // value.qty = qty;
     incrementItemWishList(value, setWishList);
   }
   return (
