@@ -14,10 +14,12 @@ function CartListing({ value }) {
   const [qty, setQty] = useState(1);
   const { setCart } = useCart();
   const { setWishList } = useWishList();
-   function incrementClickHandler(value) {    
+   function incrementClickHandler(value) { 
+        
     incrementItemCart(value._id,setCart)
   }
   function decrementClickHandler(value) {
+    if(value.qty>1)
     decrementItemCart(value._id,setCart)
   } 
 
