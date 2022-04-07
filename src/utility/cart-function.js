@@ -33,7 +33,6 @@ const incrementItemCart = async (id, setCart) => {
     
   });
     
-  console.log('from incre',response)
   setCart(response.data.cart);
 };
 const decrementItemCart = async (id, setCart) => {
@@ -48,8 +47,7 @@ const decrementItemCart = async (id, setCart) => {
     },
     
   });
-    
-  console.log('from incre',response)
+  
   setCart(response.data.cart);;
 };
 
